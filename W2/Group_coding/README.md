@@ -45,6 +45,8 @@ chain = klass.from_genesis(AtomicDB(), GENESIS_PARAMS)
 block_result = chain.get_vm().finalize_block(chain.get_block())
 block = block_result.block
 
+
+# nonce and mix_hash for this block
 nonce, mix_hash = mine_pow_nonce(
     block.number,
     block.header.mining_hash,
