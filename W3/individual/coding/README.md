@@ -1,4 +1,10 @@
-# Mainnet fork with hardhat
+# Samuel🚀 Z21124002 個人作業
+### hardhat
+### remix
+### etherscan
+
+
+# 使用 hardhat
 
 轉到一個空文件夾然後開始
 ```
@@ -65,5 +71,76 @@ npx hardhat node
 ![image](https://user-images.githubusercontent.com/70627447/148551321-f5f3fafc-3875-452d-a486-ec05a2e9a0b6.png)
 這將向 Hardhat Network 公開一個 JSON-RPC 接口。要使用它，請將錢包或應用程序連接到 `http://localhost:8545`
 ![image](https://user-images.githubusercontent.com/70627447/148553113-60c9ca59-936e-4b2d-a77f-03fa0067dfdb.png)
+
+
+# 嘗試使用 Remix 部屬第一個智能合約到公共測試網上
+
+前置步驟，先從水龍頭中拿取 goerli 測試網的ETH
+
+然後打開 remix 可以看到這幾個資料夾
+![image](https://user-images.githubusercontent.com/70627447/148629571-4e531bd0-cf41-4c94-9e9f-0773d517c74e.png)
+開啟 storage.sol 並編輯合約
+這邊使用網路上看到的計算機合約
+```
+// SPDX-License-Identifier: MIT
+pragma solidity >=0.4.22 <0.8.0;
+
+contract Calc {
+    int private result;
+    
+    function add(int a, int b) public returns (int c) {
+        result = a + b;
+        c = result;
+    }
+    
+    function min(int a, int b) public returns (int) {
+        result = a - b;
+        return result;
+    }
+    
+    function mul(int a, int b) public returns (int) {
+        result = a * b;
+        return result;
+    }
+    
+    function div(int a, int b) public returns (int) {
+        result = a / b;
+        return result;
+    }
+    
+    function getResult() public view returns (int) {
+        return result;
+    }
+}
+```
+
+按下編譯
+![image](https://user-images.githubusercontent.com/70627447/148629648-e7820180-ac46-49bc-a06a-9ce9841e074c.png)
+
+## 部屬上鏈
+將環境切換成 `injected web3`，可以跟小狐狸錢包接在一起
+接著按下 `deploy`
+![image](https://user-images.githubusercontent.com/70627447/148629851-53ec46c1-9a45-4438-aef6-82902990910d.png)
+合約部屬成功，可以在測試網上的etherscan看到部屬上去的合約
+![image](https://user-images.githubusercontent.com/70627447/148630255-9b6968d9-4edb-44a6-8e1e-2a96c07cb11c.png)
+
+
+
+# 試用etherscan
+在etherscan上找到自己部屬的合約後點擊 contract 發現找不到自己的合約程式碼
+![image](https://user-images.githubusercontent.com/70627447/148630266-90993c93-225e-470c-8e64-79051e5706e3.png)
+為了讓大家都能看到我的合約，點選 verify
+![image](https://user-images.githubusercontent.com/70627447/148630338-cd89b2af-f3a3-4564-8692-5c2f8a7d6b85.png)
+按下 continue 後貼上合約
+![image](https://user-images.githubusercontent.com/70627447/148630380-c584267d-ded2-435e-8e40-95f02af4fd89.png)
+這時候就可以看到自己的合約代碼了
+
+現在來試用看看自己的合約
+回到 remix，計算3+5
+![image](https://user-images.githubusercontent.com/70627447/148630432-6a848241-7914-4cb1-9dde-9c6594ff4fb1.png)
+按下add送出交易
+在etherscan上可以看到getResult顯示8
+![image](https://user-images.githubusercontent.com/70627447/148630447-dc7d2872-58ac-4979-a191-48e2a95364c1.png)
+
 
 
