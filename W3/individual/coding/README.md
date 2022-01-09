@@ -2,7 +2,8 @@
 ### hardhat
 ### remix
 ### etherscan
-### 
+### infura
+### VS code
 
 # 試用infura，創建帳號並建立一個project
 ![image](https://user-images.githubusercontent.com/70627447/148680320-38c3bf09-62d7-4300-a737-af05db13de46.png)
