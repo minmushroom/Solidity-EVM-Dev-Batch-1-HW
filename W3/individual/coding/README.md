@@ -1,7 +1,12 @@
-# Samuel🚀 Z21124002 個人作業
+# Samuel🚀 Z21124002 第三周個人作業
 ### hardhat
 ### remix
 ### etherscan
+### 
+
+# 試用infura，創建帳號並建立一個project
+![image](https://user-images.githubusercontent.com/70627447/148680320-38c3bf09-62d7-4300-a737-af05db13de46.png)
+
 
 
 # 使用 hardhat
@@ -141,6 +146,20 @@ contract Calc {
 按下add送出交易
 在etherscan上可以看到getResult顯示8
 ![image](https://user-images.githubusercontent.com/70627447/148630447-dc7d2872-58ac-4979-a191-48e2a95364c1.png)
+
+
+# 在 VS code 中撰寫第一個智能合約
+
+打開 VS code 並安裝 solidity extension
+開啟一個資料夾並貼上剛剛的合約
+![image](https://user-images.githubusercontent.com/70627447/148681549-a6cfd4ff-0827-4a67-8b49-38ca52c8176b.png)
+按下編譯，出現error，
+`note that nightly builds are considered to be strictly less than the released version`
+![image](https://user-images.githubusercontent.com/70627447/148681589-c051ab99-6ceb-4b9d-9801-59653fc6ec43.png)
+不知道為什麼好像一定要特定版本
+把第一行改成這樣問題解決
+`pragma solidity ^0.8.11;`  
+合約編譯完成!
 
 
 
