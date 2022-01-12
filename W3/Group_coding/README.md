@@ -27,6 +27,18 @@ ganache-cli -d -f https://mainnet.infura.io/v3/CnnOsipSpXn4KPQFG8mhKMK0n5pgYEqw 
 error:
 ![image](https://user-images.githubusercontent.com/70627447/148682265-c642038b-0655-4c2b-b3ce-75d160410057.png)
 
+將 hardhat config 檔案修改一下
+```
+module.exports = {
+  solidity: "0.8.4",
+  networks: {
+    hardhat: {
+      chainId: 1
+    }
+  }
+};
+```
+成功
 
 # mainnet fork with Linode
 ### 創建 linode 帳號並建立一台VM
